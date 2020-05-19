@@ -26,15 +26,15 @@ body {
   color: #ffffff;
 }
 
-.b-green{
-  background-color: #27AE60;
-}
-.b-yellow{
-  background-color: #F1C40F;
-}
-.b-red{
-  background-color: #CB4335;
-}
+  .b-green{
+    background-color: #27AE60;
+  }
+  .b-yellow{
+    background-color: #F1C40F;
+  }
+  .b-red{
+    background-color: #CB4335;
+  }
 
 
 .graph {
@@ -44,14 +44,17 @@ body {
   height: 300px;
   background-color: white;
 }
+  .graph img{
+    height: 220px;
+  }
 
-.g-1{
-  width: 61%;
-}
+  .g-1{
+    width: 61%;
+  }
 
-.g-2{
-  width: 30%;
-}
+  .g-2{
+    width: 30%;
+  }
 
 .social {
   display: inline-block;
