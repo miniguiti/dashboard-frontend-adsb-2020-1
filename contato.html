@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form-style.css" />
+    <script src="js/menu.js"></script>
+    <title>Contato</title>
+  </head>
+  <body>
+    <div class="sidebar" id="mySidebar">
+      <a href="#" class="closebtn" onclick="closeNav()">x</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#">Meu Perfil</a>
+      <a href="#">Relatórios</a>
+      <a href="#">Configurações</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="header">
+      <a class="openbtn" onclick="openNav()">☰</a>
+    </div>
+
+    <div class="main-contato">
+    <h1>Entre em contato</h1>
+      <form>
+        <label for="nomesobrenome">Nome e Sobrenome:</label>
+        <input type="text" id="nomesobrenome" class="input-padrao"  required/>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="seuemail@dominio.com" class="input-padrao" required />
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" class="input-padrao" required placeholder="(00) 90000-0000"/>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea
+          id="mensagem"
+          cols="60"
+          rows="10"
+          class="input-padrao"
+          required
+        ></textarea>
+
+        <div>
+          <p>Como prefere nosso contato ?</p>
+          <label for="telefone-radio">
+            <input type="radio" name="contato" id="telefone-radio" /> 
+            Telefone
+          </label>
+
+          <label for="email-radio">
+            <input type="radio" name="contato" id="email-radio" />
+            E-mail:
+          </label>
+
+          <label for="whatsapp">
+            <input type="radio" name="contato" id="whatsapp" />
+            WhatsApp
+          </label>
+
+          <label> 
+              <input type="checkbox"> Quero receber novidades
+          </label>
+        </div>
+
+        <input type="submit" value="Enviar" class="input-padrao btngreen" />
+      </form>
+      <div class="form-img"></div>
+    </div>
+  </body>
+</html>
