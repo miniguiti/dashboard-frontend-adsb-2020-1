@@ -23,15 +23,18 @@
 
     <div class="main-contato">
     <h1>Entre em contato</h1>
-      <form>
+      <form onsubmit="enviaContatoProBanco()">
+        <ul id="mensagemErro" class="m-erro">
+        </ul>
+
         <label for="nomesobrenome">Nome e Sobrenome:</label>
-        <input type="text" id="nomesobrenome" class="input-padrao"  required/>
+        <input type="text" id="nomesobrenome" class="input-padrao" />
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" placeholder="seuemail@dominio.com" class="input-padrao" required />
+        <input type="email" id="email" placeholder="seuemail@dominio.com" class="input-padrao" />
 
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" class="input-padrao" required placeholder="(00) 90000-0000"/>
+        <input type="text" id="telefone" class="input-padrao" placeholder="(00) 90000-0000"/>
 
         <label for="mensagem">Mensagem:</label>
         <textarea
@@ -39,8 +42,10 @@
           cols="60"
           rows="10"
           class="input-padrao"
-          required
         ></textarea>
+        <label>Campo Númerico:
+          <input  id="campoNum"  class="input-padrao">
+        </label>
 
         <div>
           <p>Como prefere nosso contato ?</p>
@@ -50,7 +55,7 @@
           </label>
 
           <label for="email-radio">
-            <input type="radio" name="contato" id="email-radio" />
+            <input type="radio" name="contato" id="email-radio" checked />
             E-mail:
           </label>
 
@@ -60,7 +65,7 @@
           </label>
 
           <label> 
-              <input type="checkbox"> Quero receber novidades
+              <input type="checkbox" checked> Quero receber novidades
           </label>
         </div>
 
@@ -68,5 +73,49 @@
       </form>
       <div class="form-img"></div>
     </div>
+
+    <script>
+      function enviaContatoProBanco(){
+
+        var erros = validaContato();
+        mensagemErro.innerHTML = "";
+        
+        if(erros.length > 0){
+          for(var i=0; i < erros.length; i++){
+              var erro = erros[i];
+              var li = document.createElement("li");
+              li.innerHTML = erro;
+              mensagemErro.appendChild(li);
+          }
+        }else{
+           // Código que envia os dados
+          // para o BD
+        }       
+      }
+
+      function validaContato(){
+        var erros = [];
+
+        if(!nomesobrenome.value){
+          erros.push("Prencher nome!");
+        }
+
+        if(!email.value ||
+            (email.value.search("@") == -1) ||
+            (email.value.search(".") == -1) ||
+            (email.value.search(" ") >= '')){
+          erros.push("O formato do email é: usuario@dominio.com");
+        }
+
+        if(!mensagem.value){
+          erros.push("Preencha a mensagem!")
+        }
+
+        if(isNaN(campoNum.value)){
+          erros.push("Insira um número valido!");
+        }
+        return erros;
+      }
+    </script>
   </body>
 </html>

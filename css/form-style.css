@@ -45,3 +45,14 @@ form label, form p{
     font-weight: bold;
 }
 
+.m-erro{
+    color: red;
+}
+.m-erro li{
+    background-color: #ff00004a;
+    padding: 10px;
+    margin: 5px;
+    list-style: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
