@@ -28,6 +28,18 @@
       <a class="openbtn" onclick="openNav()">☰</a>
     </div>
 
+    <div class="notification" id="notification">
+      <div class="notification-item">
+        <div class="notification-icon">
+          <i class="fas fa-bell fa-3x" id="bell"></i>
+        </div>
+        <div>
+          <h3>Esssa não!</h3>
+          <h5>Aqui você coloca uma noticia ruim</h5>          
+        </div>
+      </div>
+    </div>
+    
     <div class="main" id="main">
       <div class="container">
         <h1>Dashboard</h1>
@@ -45,17 +57,21 @@
         </div>
 
         <div class="graph g-1">
-          <h3>Assinantes por esporte</h3>
+          <h4>Assinantes por esporte</h4>
+          <img src="img/barras.PNG" alt="" />
         </div>
         <div class="graph g-2">
-          <h3>Assinantes por idade</h3>
+          <h4>Faixa etária</h4>
+          <img src="img/pizza.PNG" alt="" />
         </div>
 
         <div class="graph g-2">
-          <h3>Frequência e Avaliação</h3>
+          <h4>Frequencia e Avaliação</h4>
+          <img src="img/dispersao.PNG" alt="" />
         </div>
         <div class="graph g-1">
-          <h3>Uso por periodo</h3>
+          <h4>Prática por periodo</h4>
+          <img src="img/linhas.PNG" alt="" />
         </div>
 
         <div class="social">
@@ -92,4 +108,27 @@
       </div>
     </div>
   </body>
+
+  <script>
+    setInterval(() => {
+      var alertTemp = Math.floor(Math.random() * 11);
+
+      console.log("Temperatura:", alertTemp);
+
+      if (alertTemp > 5) {
+        notification.style.display = "block";
+
+        setInterval(() => {
+          bell.style.transform = "rotate(20deg)"
+        },1000);
+
+        setInterval(() => {
+          bell.style.transform = "rotate(-20deg)"
+        },2000);
+
+      }else{
+        notification.style.display = "none";
+      }
+    }, 5000);
+  </script>
 </html>

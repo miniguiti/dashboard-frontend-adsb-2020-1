@@ -113,3 +113,45 @@ body {
   font-size: 37px;
   margin-left: 80%;
 }
+
+/* NOTIFICATION */
+.notification{
+    width: 480px;
+    right: 0;
+    position: fixed;
+    margin: 20px;
+    display: none;
+}
+
+
+.notification-item{
+   background-color: white;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0px 0px 25px 0px #00000069;
+}
+
+.notification-item h5,
+.notification-item h3{
+  margin: 10px;
+}
+
+.notification-item h3{
+  color: #de0000;
+}
+
+.notification-icon{
+  padding: 26px;
+  background-color: #de0000;
+  margin-right: 20px;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* ANIMAÇÃO */
+
+.notification-item:hover{
+  transition:0.5s ;
+  transform: scale(0.95);
+}
